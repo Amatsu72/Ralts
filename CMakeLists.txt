@@ -15,10 +15,12 @@ include_directories(
     Ralts/3rdParty/glfw/include
     Ralts/3rdParty/glad/include
     Ralts/3rdParty/
+    Ralts/3rdParty/assimp/include
     )
 
 add_subdirectory(Ralts/3rdParty/glfw)
 add_subdirectory(Ralts/3rdParty/glad)
+add_subdirectory(Ralts/3rdParty/assimp)
 
 add_subdirectory(Ralts/src/App)
 add_subdirectory(Ralts/src)

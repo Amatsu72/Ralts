@@ -8,7 +8,7 @@ file(GLOB SRC "*.cpp" ${3RDPATH}/stb_image/*.cpp)
 
 link_directories(${LIBPATH})
 add_executable(Ralts ${SRC})
-target_link_libraries(Ralts PUBLIC glfw3 app glad)
+target_link_libraries(Ralts PUBLIC glfw3 app glad assimp)
 
 target_precompile_headers(Ralts PUBLIC pch.h)
 
