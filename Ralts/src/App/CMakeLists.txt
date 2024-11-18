@@ -6,3 +6,5 @@ set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 
 file(GLOB APPSRC "*.cpp")
 add_library(app STATIC ${APPSRC})
+target_link_libraries(app PUBLIC engine)
+

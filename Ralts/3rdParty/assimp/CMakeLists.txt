@@ -91,7 +91,7 @@ OPTION( BUILD_SHARED_LIBS
 )
 OPTION( ASSIMP_BUILD_FRAMEWORK
   "Build package as Mac OS X Framework bundle."
-  ON
+  OFF
 )
 OPTION( ASSIMP_DOUBLE_PRECISION
   "Set to ON to enable double precision processing"
@@ -127,7 +127,7 @@ OPTION ( ASSIMP_COVERALLS
 )
 OPTION( ASSIMP_INSTALL
   "Disable this if you want to use assimp as a submodule."
-  ON
+  OFF
 )
 OPTION ( ASSIMP_WARNINGS_AS_ERRORS
   "Treat all warnings as errors."
