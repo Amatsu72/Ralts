@@ -1,5 +1,5 @@
 #pragma once
-#include "../Engine/Core/Window.h"
+#include "../Engine/engine.h"
 
 namespace App {
     class Application { 
@@ -14,11 +14,16 @@ namespace App {
         }
 
         void update();
+        void onEvent(Engine::Event& e);
+
         void init();
         bool isRunning() const { return m_running; }
 
     private:
         Application() {}  
+
+        bool onWindowClose(Engine::Event& e);
+        bool onWindowResize(Engine::Event& e);
 
         bool m_running = true;
         std::unique_ptr<Engine::Window> m_window;

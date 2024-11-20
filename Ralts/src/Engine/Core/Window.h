@@ -1,5 +1,6 @@
 #pragma once
 #include "Context.h"
+#include "../Event/Event.h"
 
 namespace Engine {
 
@@ -7,12 +8,13 @@ namespace Engine {
         std::string title;
         unsigned int width, height;
         bool vsync;
-
-        WindowProps(const std::string& title = "Ralts",
-                    unsigned int width = 1280,
-                    unsigned int height = 720,
-                    bool vsync = true)
-            : title(title), width(width), height(height), vsync(vsync) {}
+        std::function<void(Event &)> callback;
+        WindowProps(const std::string &title,
+                    unsigned int width,
+                    unsigned int height,
+                    bool vsync,
+                    std::function<void(Event &)> callback)
+            : title(title), width(width), height(height), vsync(vsync), callback(callback) {}
     };
 
     class Window {
@@ -28,9 +30,12 @@ namespace Engine {
         void shutdown();
         void update();
 
+        void setEventCallback(const std::function<void(Event &)> &callback) { m_data.callback = callback; }
+
     private:
         WindowProps m_data;
         GLFWwindow* m_window;
         std::unique_ptr<Context> m_context;
+
     };
 }

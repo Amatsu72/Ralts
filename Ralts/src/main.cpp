@@ -3,11 +3,13 @@
 int main(int argc, char** argv) {
 
     App::app.init();
-    while(App::app.isRunning()) {
+    Engine::timer.init();
+    Engine::event.init();
+    while (App::app.isRunning())
+    {
+        Engine::timer.tick();
+        Engine::event.poll();
         App::app.update();
     }
-    std::cout << "Hello, world!" << std::endl;
-    std::cout << "This is a test program" << std::endl;
     return 0;
-
 }

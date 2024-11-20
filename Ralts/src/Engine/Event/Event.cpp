@@ -4,7 +4,7 @@
 namespace Engine {
 
     void windowCloseCallback(GLFWwindow* window) {
-
+        
     }    
 
     Event::Event() {

@@ -5,11 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 
 file(GLOB ENGINESRC 
-    "./Component/*.cpp"
+    "./ECS/Base/*.cpp"
+    "./ECS/Component/*.cpp"
+    "./ECS/System/*.cpp"
     "./Core/*.cpp" 
     "./Event/*.cpp" 
-    "./System/*.cpp"
+
 )
 add_library(engine STATIC ${ENGINESRC})
-target_link_libraries(engine PUBLIC glfw glad)
+target_link_libraries(engine PUBLIC glfw glad app)
 
