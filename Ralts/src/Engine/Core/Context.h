@@ -1,17 +1,19 @@
 #pragma once
 #include "../../pch.h"
 
-namespace Engine {
+namespace Engine
+{
 
-    class Context {
+    class Context
+    {
     public:
-        Context(GLFWwindow* m_window):m_windowHandle(m_window) {}
+        Context(GLFWwindow *m_window) : m_windowHandle(m_window) {}
         ~Context() {}
 
         void init();
         void swapBuffers();
 
     private:
-        GLFWwindow* m_windowHandle;
+        GLFWwindow *m_windowHandle;
     };
 }

@@ -1,21 +1,17 @@
 #include "Event.h"
 
+namespace Engine
+{
 
-namespace Engine {
-
-    void windowCloseCallback(GLFWwindow* window) {
-        
-    }    
-
-    Event::Event() {
-
+    Event::Event()
+    {
     }
 
-    void Event::poll() {
-
+    void Event::poll()
+    {
     }
 
-    void Event::init() {
-
+    void Event::init()
+    {
     }
 }

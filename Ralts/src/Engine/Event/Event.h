@@ -1,17 +1,18 @@
 #pragma once
-#include "../../pch.h"
+#include "../Core/Macro.h"
 
-namespace Engine {
+namespace Engine
+{
 
-    void windowCloseCallback(GLFWwindow *window);
-
-    class Event {
+    class Event
+    {
     public:
         ~Event() {}
-        Event(const Event&) = delete;
-        Event& operator=(const Event&) = delete;
+        Event(const Event &) = delete;
+        Event &operator=(const Event &) = delete;
 
-        static Event& ref() {
+        static Event &ref()
+        {
             static Event instance;
             return instance;
         }
@@ -21,11 +22,8 @@ namespace Engine {
 
     private:
         Event();
-
     };
 
-    static Event& event = Event::ref();
-
-    
+    static Event &event = Event::ref();
 
 }

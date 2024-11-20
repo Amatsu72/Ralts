@@ -1,11 +1,13 @@
 #include "Window.h"
 
-namespace Engine {
+namespace Engine
+{
 
-    Window::Window(const WindowProps& props) : m_data(props)
+    Window::Window(const WindowProps &props) : m_data(props)
     {
         int success = glfwInit();
-        if(!success) {
+        if (!success)
+        {
             std::cerr << "Failed to initialize GLFW" << std::endl;
         }
         glfwWindowHint(GLFW_SAMPLES, 4);
@@ -25,7 +27,7 @@ namespace Engine {
         m_context->init();
 
         glfwSetWindowUserPointer(m_window, &m_data);
-		setVsync(true);
+        setVsync(true);
     }
 
     void Window::update()
@@ -33,7 +35,7 @@ namespace Engine {
         // glfwPollEvents();
         // m_context->swapBuffers();
 
-        while(!glfwWindowShouldClose(m_window))
+        while (!glfwWindowShouldClose(m_window))
         {
             glfwPollEvents();
             glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -41,13 +43,13 @@ namespace Engine {
             glfwSwapBuffers(m_window);
         }
     }
-    
+
     Window::~Window()
     {
         shutdown();
     }
-    
-    void Window::shutdown() 
+
+    void Window::shutdown()
     {
         glfwDestroyWindow(m_window);
         glfwTerminate();

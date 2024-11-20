@@ -2,9 +2,11 @@
 #include "Context.h"
 #include "../Event/Event.h"
 
-namespace Engine {
+namespace Engine
+{
 
-    struct WindowProps {
+    struct WindowProps
+    {
         std::string title;
         unsigned int width, height;
         bool vsync;
@@ -17,9 +19,10 @@ namespace Engine {
             : title(title), width(width), height(height), vsync(vsync), callback(callback) {}
     };
 
-    class Window {
+    class Window
+    {
     public:
-        Window(const WindowProps& props);
+        Window(const WindowProps &props);
         ~Window();
 
         inline unsigned int getWidth() const { return m_data.width; }
@@ -34,8 +37,7 @@ namespace Engine {
 
     private:
         WindowProps m_data;
-        GLFWwindow* m_window;
+        GLFWwindow *m_window;
         std::unique_ptr<Context> m_context;
-
     };
 }

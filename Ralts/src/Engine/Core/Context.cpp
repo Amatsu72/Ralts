@@ -1,15 +1,19 @@
 #include "Context.h"
 
-namespace Engine {
-    void Context::init() {
+namespace Engine
+{
+    void Context::init()
+    {
         glfwMakeContextCurrent(m_windowHandle);
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        if(!status) {
-            std::cout << "Failed to initialize GLAD" << std::endl;  
+        if (!status)
+        {
+            std::cout << "Failed to initialize GLAD" << std::endl;
         }
     }
 
-    void Context::swapBuffers() {
+    void Context::swapBuffers()
+    {
         glfwSwapBuffers(m_windowHandle);
     }
 

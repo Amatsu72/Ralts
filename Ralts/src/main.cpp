@@ -1,6 +1,7 @@
 #include "App/Application.h"
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
 
     App::app.init();
     Engine::timer.init();
