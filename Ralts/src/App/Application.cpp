@@ -15,9 +15,11 @@ namespace App
     void Application::init()
     {
         m_running = true;
-        Engine::WindowProps props("Ralts", 1280, 720, true,
-                                  std::bind(&Application::onEvent, this, std::placeholders::_1));
+        Engine::WindowProps props("Ralts", 1280, 720, true);
         m_window = std::make_unique<Engine::Window>(props);
+        m_window->setEventCallback(BIND_EVENT_FN(Application::onEvent));
+
+        
     }
 
     Application::~Application()

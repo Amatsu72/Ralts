@@ -10,6 +10,7 @@ namespace Engine
 
         virtual void start() = 0;
         virtual void update() = 0;
+        virtual void render() = 0;
         virtual void destroy() = 0;
 
         void addEntity(const EntityID entity)
@@ -30,10 +31,11 @@ namespace Engine
         template <typename T>
         void addComponentSignature()
         {
-            m_signature.insert(ComponentID<T>())
+            m_signature.insert(componentType<T>());
         }
 
     private:
+        friend class EentityManager;
         EntitySignature m_signature;
         std::set<EntityID> m_entities;
     };

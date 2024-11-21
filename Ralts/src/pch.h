@@ -12,6 +12,7 @@
 #include <cassert>
 #include <algorithm>
 #include <functional>
+#include <queue>
 
 // opengl
 #include <glad/glad.h>

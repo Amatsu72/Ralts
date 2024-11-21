@@ -31,7 +31,7 @@ namespace Engine
     template <typename T>
     inline static const ComponentTypeID componentType() noexcept
     {
-        static_assert((std::is_base_of_v<Component, T>::value && !std::is_same<Component, T>::value), "invalid template type!");
+        static_assert((std::is_base_of_v<Component, T> && !std::is_same<Component, T>::value), "invalid template type!");
         static const ComponentTypeID typeID = getRuntimeComponentTypeID();
         return typeID;
     }
@@ -39,7 +39,7 @@ namespace Engine
     template <typename T>
     inline static const SystemTypeID systemType() noexcept
     {
-        static_assert((std::is_base_of_v<System, T>::value && !std::is_same<System, T>::value), "invalid template type!");
+        static_assert((std::is_base_of_v<System, T> && !std::is_same<System, T>::value), "invalid template type!");
         static const SystemTypeID typeID = getRuntimeSystemTypeID();
         return typeID;
     }

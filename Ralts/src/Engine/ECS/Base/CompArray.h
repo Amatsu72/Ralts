@@ -3,20 +3,20 @@
 
 namespace Engine
 {
-    class BaseComponentList
+    class BaseCompList
     {
     public:
-        BaseComponentList() = default;
-        virtual ~BaseComponentList() = default;
+        BaseCompList() = default;
+        virtual ~BaseCompList() = default;
         virtual void erase(const EntityID entity) {}
     };
 
     template <typename T>
-    class ComponentList : public BaseComponentList
+    class CompList : public BaseCompList
     {
     public:
-        ComponentList() = default;
-        ~ComponentList() = default override;
+        CompList() = default;
+        virtual ~CompList() = default;
 
         void insert(const T &component)
         {
