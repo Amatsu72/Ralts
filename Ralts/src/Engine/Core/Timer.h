@@ -20,7 +20,7 @@ namespace Engine
         inline float deltaTime() const { return m_deltaTime; }
 
     private:
-        Timer() : m_lastFrame(0.0f), m_deltaTime(0.0f) {}
+        Timer(); 
         float m_lastFrame, m_deltaTime;
     };
 

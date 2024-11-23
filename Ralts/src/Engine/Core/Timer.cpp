@@ -4,6 +4,10 @@
 namespace Engine
 {
 
+    Timer::Timer(): m_lastFrame(0.0f), m_deltaTime(0.0f) 
+    {
+    }
+    
     void Timer::init()
     {
     }
