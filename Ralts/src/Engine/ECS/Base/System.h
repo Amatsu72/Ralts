@@ -23,7 +23,7 @@ namespace Engine
             m_entities.erase(entity);
         }
 
-        const EntitySignature &getSignature() const
+        const Signature &getSignature() const
         {
             return m_signature;
         }
@@ -35,8 +35,8 @@ namespace Engine
         }
 
     private:
-        friend class EentityManager;
-        EntitySignature m_signature;
+        friend class EntityManager;
+        Signature m_signature;
         std::set<EntityID> m_entities;
     };
 }
